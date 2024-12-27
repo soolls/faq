@@ -1,0 +1,186 @@
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to top right, rgb(127, 99, 184), rgb(174, 143, 213));
+    padding: 0;
+    margin: 0; /* Устранение отступов по умолчанию */
+}
+
+.wrapper {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: white;
+}
+
+h2 {
+    font-size: 1.8em;
+    margin: 20px 0 10px;
+    color: white;
+}
+
+.info {
+    display: none; /* Скрываем элементы по умолчанию */
+    opacity: 0; /* Начальная непрозрачность для анимации */
+    transition: opacity 0.5s ease; /* Плавный переход для непрозрачности */
+}
+
+.info.show {
+    display: block; /* Показываем элемент */
+    opacity: 1; /* Устанавливаем непрозрачность */
+}
+
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff; /* Непрозрачный фон */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.loader-content {
+    text-align: center;
+}
+
+.spinner {
+    border: 8px solid rgba(127, 99, 184, 0.3); /* Цвет фона */
+    border-top: 8px solid rgb(127, 99, 184); /* Цвет верхней части */
+    border-radius: 50%;
+    width: 60px; /* Ширина спиннера */
+    height: 60px; /* Высота спиннера */
+    animation: spin 1s linear infinite; /* Анимация вращения */
+    margin-bottom: 20px; /* Отступ снизу */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.loader p {
+    font-size: 1.5em; /* Размер текста */
+    color: rgb(127, 99, 184); /* Цвет текста */
+}
+
+.content {
+    opacity: 0; /* Начальная непрозрачность для анимации */
+    transition: opacity 1s ease-in-out; /* Плавная анимация для контента */
+}
+
+.content.show {
+    opacity: 1; /* Полная непрозрачность при показе */
+}
+
+button {
+    display: inline-block;
+    font-size: 1em;
+    line-height: 1.6;
+    margin: 10px 0;
+    padding: 10px 20px;
+    color: white;
+    background: linear-gradient(to bottom, rgb(127, 99, 184), rgb(174, 143, 213));
+    border: 2px solid #5a3e7a;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s, box-shadow 0.2s;
+    width: calc(100% - 40px);
+    min-width: 200px;
+    height: auto;
+    white-space: normal;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background: linear-gradient(to top right, rgb(127, 99, 184), rgb(174, 143, 213));
+    transform: translateY(-2px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+a {
+    display: inline-block;
+    font-size: 1.2em;
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+    transition: background 0.3s, color 0.3s, transform 0 .2s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+a:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: rgb(127, 99, 184);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+a:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.fin, .often, .tech {
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px 0;
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid #a789c4;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+ul {
+    list-style-type: none;
+    text-align: left;
+    margin: 10px 0;
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+li {
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+
+    button {
+        width: calc(100% - 40px);
+        min-width: 200px;
+        height: auto;
+        white-space: normal;
+        text-align: center;
+        border-radius: 10px;
+    }
+
+    a {
+        font-size: 1.2em;
+    }
+}
